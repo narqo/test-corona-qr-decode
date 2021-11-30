@@ -20,9 +20,13 @@ fn main() {
     assert_eq!(1, results.len());
 
     if let Ok(line) = results.first().unwrap() {
-        if let Some(input) = line.strip_prefix("HC1:") {
-            decode(input);
-        }
+        let input = match line.strip_prefix("HC1:") {
+            Some(input) => input,
+            None => {
+                panic!("Unexpected data format: no HC1: prefix found")
+            }
+        };
+        decode(input);
     }
 }
 
