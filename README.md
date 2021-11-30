@@ -1,6 +1,6 @@
-# corona-qr-decode
+# test-corona-qr-decode
 
-A decoder for Corona QR codes in Rust.
+Test decoder for Corona QR codes in Rust.
 
 Example usage:
 
